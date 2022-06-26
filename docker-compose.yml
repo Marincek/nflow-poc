@@ -1,0 +1,44 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    links:
+      - db
+    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/microbatch
+#      - SPRING_DATASOURCE_URL=jdbc:sqlserver://db:1433;encrypt=true;trustServerCertificate=true;databaseName=microbatch
+       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/microbatch?serverTimezone=UTC
+
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=microbatch
+      - MYSQL_USER=sa
+      - MYSQL_PASSWORD=N0PsRAGafCRsTQXN
+      - MYSQL_ROOT_PASSWORD=N0PsRAGafCRsTQXN
+    ports:
+      - 3306:3306
+
+#  db:
+#    image: postgres:14.1-alpine
+#    restart: always
+#    environment:
+#      - POSTGRES_USER=sa
+#      - POSTGRES_PASSWORD=N0PsRAGafCRsTQXN
+#      - POSTGRES_DB=microbatch
+#    ports:
+#      - '5432:5432'
+
+
+#  db:
+#    ports:
+#      - 1433:1433
+#    build:
+#      context: mssql-db/.
+#    environment:
+#      ACCEPT_EULA: Y
+#      SA_PASSWORD: N0PsRAGafCRsTQXN
+
+volumes:
+  db:
+    driver: local

@@ -1,0 +1,38 @@
+plugins {
+    id 'org.springframework.boot' version '2.6.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.marincek'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+//    implementation 'org.postgresql:postgresql'
+    implementation 'mysql:mysql-connector-java:8.0.29'
+//    implementation 'com.microsoft.sqlserver:mssql-jdbc:10.2.0.jre17'
+
+    implementation 'io.nflow:nflow-engine:8.0.0'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
