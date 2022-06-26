@@ -19,7 +19,8 @@ Key Features
 
 ### Usecase and goal
 
-Imagine an usecase where you need to process some data. The processing should be done by multiple instances and if some of them, or all, fail - the new ones should pick up the work and process the unfinished data.
+Imagine a usecase where you need to process some data. 
+The processing should be done by multiple instances and if some of them, or all, fail - the new ones should pick up the work and process the unfinished data.
 Basically we want high available and recoverable processing service.
 
 The POC have one simple service that is producing 200 IDs on startap and nFlow is processing them.
