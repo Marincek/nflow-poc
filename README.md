@@ -1,6 +1,6 @@
 # nFlow POC
 
-As the tile says, Im using the nFlow library for this POC https://github.com/NitorCreations/nflow
+As the title says, Im using the nFlow library for this POC https://github.com/NitorCreations/nflow
 nFlow is a solution for orchestrating business processes. Depending on where you're coming from, you can view nFlow as any of the following:
 
 - Microservices orchestrator (as in Saga-pattern)
