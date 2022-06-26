@@ -1,5 +1,31 @@
 # nFlow POC
 
+As the tile says, Im using the nFlow library for this POC https://github.com/NitorCreations/nflow
+nFlow is a solution for orchestrating business processes. Depending on where you're coming from, you can view nFlow as any of the following:
+
+- Microservices orchestrator (as in Saga-pattern)
+- Guaranteed delivery computing
+- Replacement for business process engine
+- Persistent finite-state machine
+
+Key Features
+- Non-declarative — workflows are defined as code
+- Visualization — workflows can be visualized in nFlow Explorer
+- Embeddable — usually embedded as a library, but a standalone server is also provided
+- High availability — the same workflows can be processed by multiple deployments
+- Fault tolerant — automatic recovery if runtime environment crashes
+- Atomic state updates — uses and requires a relational database for atomic state updates and locking
+- Multiple databases supported — PostgreSQL, MySQL, MariaDB, Oracle, Microsoft SQL Server, DB2, H2
+
+### Usecase and goal
+
+Imagine an usecase where you need to process some data. The processing should be done by multiple instances and if some of them, or all, fail - the new ones should pick up the work and process the unfinished data.
+Basically we want high available and recoverable processing service.
+
+The POC have one simple service that is producing 200 IDs on startap and nFlow is processing them.
+
+The goal of the POC is to demonstrate that several instances can start the work , and if they restart the new one will recover the work.
+
 ### Starting the services 
 run this command to start the database and 5 application instances
 
