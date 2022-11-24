@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-alpine
+FROM openjdk:19-jdk-alpine
 MAINTAINER jan
 COPY build/libs/lock-0.0.1-SNAPSHOT.jar lock-0.0.1-SNAPSHOT.jar
 ENTRYPOINT [ \
